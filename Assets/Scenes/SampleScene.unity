@@ -382,8 +382,8 @@ RectTransform:
   m_Father: {fileID: 989742134}
   m_RootOrder: 4
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
-  m_AnchorMin: {x: 0.4312549, y: 0.5974304}
-  m_AnchorMax: {x: 0.5856286, y: 0.6328607}
+  m_AnchorMin: {x: 0.43034348, y: 0.5960561}
+  m_AnchorMax: {x: 0.5847172, y: 0.6314864}
   m_AnchoredPosition: {x: 0, y: 0}
   m_SizeDelta: {x: 0, y: 0}
   m_Pivot: {x: 0.5, y: 0.5}
@@ -1624,11 +1624,12 @@ MonoBehaviour:
   buttonNameField: {fileID: 1552080716}
   questionField: {fileID: 1515063574}
   answerInputFields: []
+  dropdowns: []
   answerInputFieldPref: {fileID: 3399422535590639397, guid: 802555100f9d0f84ba3dde40ccb206a9, type: 3}
   answerParent: {fileID: 989742134}
   addAnswerField: {fileID: 273654217}
   firstAnswerField: {fileID: 120467176}
-  dropdownPref: {fileID: 8997183019578715344, guid: f181fecc9bdd39c43b73c25c99c2ef83, type: 3}
+  dropdownPref: {fileID: 8997183019578715346, guid: f181fecc9bdd39c43b73c25c99c2ef83, type: 3}
 --- !u!4 &1098833968
 Transform:
   m_ObjectHideFlags: 0
