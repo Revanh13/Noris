@@ -20,10 +20,12 @@ public class GameController : MonoBehaviour
     public InputField buttonNameField;
     public InputField questionField;
     public List<GameObject> answerInputFields = new List<GameObject>();
+    public List<GameObject> dropdowns = new List<GameObject>();
     public GameObject answerInputFieldPref;
     public Transform answerParent;
     public Transform addAnswerField;
     public Transform firstAnswerField;
+    public GameObject dropdownPref;
     
     #endregion
 
@@ -64,8 +66,25 @@ public class GameController : MonoBehaviour
         var inputField = Instantiate(answerInputFieldPref, addAnswerField.position, Quaternion.identity);
         inputField.transform.SetParent(answerParent);
         answerInputFields.Add(inputField);
+
+        var dropdownNew = Instantiate(dropdownPref, new Vector3(addAnswerField.position.x + 400f, addAnswerField.position.y, 0), Quaternion.identity);
+        dropdownNew.transform.SetParent(answerParent);
+        dropdowns.Add(dropdownNew);
+        
         addAnswerField.position = new Vector3(addAnswerField.position.x, addAnswerField.position.y - 100f, 0);
     }
+
+    // Удаление последнего поля ответа
+    // public void RemoveLastAnswer()
+    // {
+    //     int delete = answerInputFields.Count;
+
+    //     Destroy(answerInputFields[delete]);
+    //     Destroy(dropdowns[delete]);
+    //     answerInputFields.RemoveAt(delete);
+    //     dropdowns.RemoveAt(delete);
+    //     questions[currentQuestion].RemoveLastAnswer();
+    // }
 
     // Кнопка сохранения введных полей в объект question
     public void SaveQuestion()
@@ -75,7 +94,9 @@ public class GameController : MonoBehaviour
         
         for (int i = 0; i < answerInputFields.Count; i++)
         {
-            questions[currentQuestion].SetAnswer(answerInputFields[i].GetComponent<InputField>().text);
+            Answer ans = new Answer();
+            ans.name = answerInputFields[i].GetComponent<InputField>().text;
+            questions[currentQuestion].SetAnswer(ans);
         }
 
         //print(questions[0].answers[2]);
@@ -86,6 +107,8 @@ public class GameController : MonoBehaviour
     {
         foreach(GameObject field in answerInputFields) Destroy(field);
         answerInputFields.Clear();
+        foreach(GameObject drop in dropdowns) Destroy(drop);
+        dropdowns.Clear();
         addAnswerField.position = new Vector3(addAnswerField.position.x, firstAnswerField.position.y, 0);
 
         for (int i = 0; i < a; i++) AddAnswerInputField();
@@ -113,7 +136,7 @@ public class GameController : MonoBehaviour
         RespawnAnswers(questions[currentQuestion].answers.Count);
         for (int i = 0; i < answerInputFields.Count; i++) 
         {
-            answerInputFields[i].GetComponent<InputField>().text = questions[currentQuestion].answers[i];
+            answerInputFields[i].GetComponent<InputField>().text = questions[currentQuestion].answers[i].name;
         }
     }
 }
