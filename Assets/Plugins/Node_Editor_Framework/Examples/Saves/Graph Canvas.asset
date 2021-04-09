@@ -14,8 +14,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   editorStates:
   - {fileID: 11432404}
-  saveName: Assets\Saves\Graph Canvas
-  savePath: Assets\Saves\Graph Canvas.asset
+  saveName: Graph Canvas
+  savePath: Assets\Plugins\Node_Editor_Framework\Examples\Saves\Graph Canvas.asset
   livesInScene: 0
   nodes:
   - {fileID: 11412686}
@@ -766,6 +766,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f6ab6487237ff124ea4c2aa5de9ce3fb, type: 3}
   m_Name: MainEditorState
   m_EditorClassIdentifier: 
+  myCustomStateVariable: 0
   canvas: {fileID: 0}
   parentEditor: {fileID: 0}
   selectedNode: {fileID: 0}
