@@ -1,11 +1,13 @@
 using System.Collections;
 using System.Collections.Generic;
+using UnityEngine;
 
 public class Question
 {
     public string question;
     public string buttonName;
     public List<Answer> answers = new List<Answer>();
+    public Sprite emotion;
 
     public void SetQuestion(string a) { question = a; }
     public string GetQuestion() { return question; }
