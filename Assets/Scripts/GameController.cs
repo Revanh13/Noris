@@ -3,6 +3,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
+using NodeEditorFramework;
 
 public class GameController : MonoBehaviour
 {
@@ -26,12 +27,22 @@ public class GameController : MonoBehaviour
     public Transform addAnswerField;
     public Transform firstAnswerField;
     public GameObject dropdownPref;
+
+    [Header("Nodes")]
+    public List<QuestionNode> questionNodes = new List<QuestionNode>();
+    public NodeCanvas nodeCanvas;
     
     #endregion
 
     private void Start() 
     {
         // При старте нужно заполнять листы с кнопками и questions
+        // QuestionNode a = new QuestionNode();
+        // a.CreateAnswer(3);
+        
+        // questionNodes.Add(a);
+
+        
     }
 
 
