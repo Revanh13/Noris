@@ -1,6 +1,6 @@
 %YAML 1.1
 %TAG !u! tag:unity3d.com,2011:
---- !u!114 &-7807477921658340734
+--- !u!114 &-6141626721311052833
 MonoBehaviour:
   m_ObjectHideFlags: 1
   m_CorrespondingSourceObject: {fileID: 0}
@@ -12,36 +12,15 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 017e2c7fd038ecb46b317c1e003f31dc, type: 3}
   m_Name: Output
   m_EditorClassIdentifier: 
-  body: {fileID: -2176612357299484925}
+  body: {fileID: 3385892403087868316}
   direction: 2
   maxConnectionCount: 1
   styleID: System.String
   _connections: []
   side: 2
-  sidePosition: 67.5
+  sidePosition: 85.5
   sideOffset: 0
---- !u!114 &-2176612357299484925
-MonoBehaviour:
-  m_ObjectHideFlags: 1
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 37c4e2466d9f1104d93989a84939c404, type: 3}
-  m_Name: Question Node
-  m_EditorClassIdentifier: 
-  canvas: {fileID: 0}
-  position: {x: -222.5, y: -231.5}
-  dynamicConnectionPorts:
-  - {fileID: -7807477921658340734}
-  - {fileID: 9178951855804752585}
-  backgroundColor: {r: 1, g: 1, b: 1, a: 1}
-  labels:
-  - 
-  - 
---- !u!114 &-1506533432311546305
+--- !u!114 &-6074192786771580819
 MonoBehaviour:
   m_ObjectHideFlags: 1
   m_CorrespondingSourceObject: {fileID: 0}
@@ -58,7 +37,29 @@ MonoBehaviour:
   dynamicConnectionPorts: []
   backgroundColor: {r: 1, g: 1, b: 1, a: 1}
   labels: []
---- !u!114 &-672338854833031646
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 3a9396c92b94b064883de5903a0ec1b2, type: 3}
+  m_Name: CurSession
+  m_EditorClassIdentifier: 
+  editorStates:
+  - {fileID: 1789612437075232439}
+  saveName: New Graph
+  savePath: 
+  livesInScene: 0
+  nodes:
+  - {fileID: 3385892403087868316}
+  - {fileID: -6074192786771580819}
+  groups: []
+  rootNode: {fileID: -8461395300152995626, guid: 78d75100950215c42b53d4ccfe7db0f2, type: 2}
+--- !u!114 &1789612437075232439
 MonoBehaviour:
   m_ObjectHideFlags: 1
   m_CorrespondingSourceObject: {fileID: 0}
@@ -76,29 +77,28 @@ MonoBehaviour:
   selectedNode: {fileID: 0}
   panOffset: {x: 9, y: 3}
   zoom: 1
---- !u!114 &11400000
+--- !u!114 &3385892403087868316
 MonoBehaviour:
-  m_ObjectHideFlags: 0
+  m_ObjectHideFlags: 1
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 0}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 3a9396c92b94b064883de5903a0ec1b2, type: 3}
-  m_Name: LastSession
+  m_Script: {fileID: 11500000, guid: 37c4e2466d9f1104d93989a84939c404, type: 3}
+  m_Name: Question Node
   m_EditorClassIdentifier: 
-  editorStates:
-  - {fileID: -672338854833031646}
-  saveName: New Graph
-  savePath: 
-  livesInScene: 0
-  nodes:
-  - {fileID: -2176612357299484925}
-  - {fileID: -1506533432311546305}
-  groups: []
-  rootNode: {fileID: -8461395300152995626, guid: 78d75100950215c42b53d4ccfe7db0f2, type: 2}
---- !u!114 &9178951855804752585
+  canvas: {fileID: 0}
+  position: {x: -222.5, y: -231.5}
+  dynamicConnectionPorts:
+  - {fileID: 5229205249597584365}
+  - {fileID: -6141626721311052833}
+  backgroundColor: {r: 1, g: 1, b: 1, a: 1}
+  labels:
+  - 
+  - 
+--- !u!114 &5229205249597584365
 MonoBehaviour:
   m_ObjectHideFlags: 1
   m_CorrespondingSourceObject: {fileID: 0}
@@ -110,11 +110,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 017e2c7fd038ecb46b317c1e003f31dc, type: 3}
   m_Name: Output
   m_EditorClassIdentifier: 
-  body: {fileID: -2176612357299484925}
+  body: {fileID: 3385892403087868316}
   direction: 2
   maxConnectionCount: 1
   styleID: System.String
   _connections: []
   side: 2
-  sidePosition: 85.5
+  sidePosition: 67.5
   sideOffset: 0

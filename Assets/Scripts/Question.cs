@@ -18,4 +18,5 @@ public class Question
     public List<Answer> GetAnswers() { return answers; }
     public void RemoveLastAnswer() { answers.RemoveAt(answers.Count - 1); }
     public void RemoveAnswerAt(int i) { answers.RemoveAt(i); }
+    public void ClearAnswers() { answers.Clear(); }
 }

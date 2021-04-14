@@ -25,12 +25,13 @@ public class GameController : MonoBehaviour
     public GameObject answerInputFieldPref;
     public Transform answerParent;
     public Transform addAnswerField;
-    public Transform firstAnswerField;
+    public Transform removeAnswerField;
+    public Transform spawnPointButtonsAnswerField;
     public GameObject dropdownPref;
 
-    [Header("Nodes")]
-    public List<QuestionNode> questionNodes = new List<QuestionNode>();
-    public NodeCanvas nodeCanvas;
+    // [Header("Nodes")]
+    // public List<QuestionNode> questionNodes = new List<QuestionNode>();
+    // public NodeCanvas nodeCanvas;
     
     #endregion
 
@@ -41,8 +42,6 @@ public class GameController : MonoBehaviour
         // a.CreateAnswer(3);
         
         // questionNodes.Add(a);
-
-        
     }
 
 
@@ -83,25 +82,36 @@ public class GameController : MonoBehaviour
         dropdowns.Add(dropdownNew);
         
         addAnswerField.position = new Vector3(addAnswerField.position.x, addAnswerField.position.y - 100f, 0);
+        removeAnswerField.position = new Vector3(removeAnswerField.position.x, removeAnswerField.position.y - 100f, 0);
     }
 
     // Удаление последнего поля ответа
-    // public void RemoveLastAnswer()
-    // {
-    //     int delete = answerInputFields.Count;
+    public void RemoveLastAnswer()
+    {
 
-    //     Destroy(answerInputFields[delete]);
-    //     Destroy(dropdowns[delete]);
-    //     answerInputFields.RemoveAt(delete);
-    //     dropdowns.RemoveAt(delete);
-    //     questions[currentQuestion].RemoveLastAnswer();
-    // }
+        int delete = answerInputFields.Count - 1;
+        if (delete >= 0)
+        {
+            SaveQuestion();
+
+            Destroy(answerInputFields[delete]);
+            Destroy(dropdowns[delete]);
+            answerInputFields.RemoveAt(delete);
+            dropdowns.RemoveAt(delete);
+            questions[currentQuestion].RemoveLastAnswer();
+
+            addAnswerField.position = new Vector3(addAnswerField.position.x, addAnswerField.position.y + 100f, 0);
+            removeAnswerField.position = new Vector3(removeAnswerField.position.x, removeAnswerField.position.y + 100f, 0);
+        }
+    }
 
     // Кнопка сохранения введных полей в объект question
     public void SaveQuestion()
     {
         questions[currentQuestion].SetQuestion(questionField.text);
         questions[currentQuestion].SetButtonName(buttonNameField.text);
+
+        questions[currentQuestion].ClearAnswers();
         
         for (int i = 0; i < answerInputFields.Count; i++)
         {
@@ -120,7 +130,8 @@ public class GameController : MonoBehaviour
         answerInputFields.Clear();
         foreach(GameObject drop in dropdowns) Destroy(drop);
         dropdowns.Clear();
-        addAnswerField.position = new Vector3(addAnswerField.position.x, firstAnswerField.position.y, 0);
+        addAnswerField.position = new Vector3(addAnswerField.position.x, spawnPointButtonsAnswerField.position.y, 0);
+        removeAnswerField.position = new Vector3(removeAnswerField.position.x, spawnPointButtonsAnswerField.position.y, 0);
 
         for (int i = 0; i < a; i++) AddAnswerInputField();
     }
