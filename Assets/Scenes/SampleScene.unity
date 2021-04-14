@@ -745,7 +745,7 @@ MonoBehaviour:
       m_Calls:
       - m_Target: {fileID: 1098833967}
         m_TargetAssemblyTypeName: GameController, Assembly-CSharp
-        m_MethodName: AddAnswerInputField
+        m_MethodName: RemoveLastAnswer
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -1763,7 +1763,7 @@ MonoBehaviour:
   answerParent: {fileID: 989742134}
   addAnswerField: {fileID: 273654217}
   removeAnswerField: {fileID: 382294313}
-  firstAnswerField: {fileID: 120467176}
+  spawnPointButtonsAnswerField: {fileID: 120467176}
   dropdownPref: {fileID: 8997183019578715346, guid: f181fecc9bdd39c43b73c25c99c2ef83, type: 3}
 --- !u!4 &1098833968
 Transform:
@@ -2678,6 +2678,14 @@ MonoBehaviour:
     - Selection Change
     - Selection Change
     - Inspector
+    - Selection Change
+    - Selection Change
+    - Selection Change
+    - Selection Change
+    - Inspector
+    - Selection Change
+    - Inspector
+    - Selection Change
 --- !u!4 &1695629850
 Transform:
   m_ObjectHideFlags: 3

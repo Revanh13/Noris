@@ -111,6 +111,7 @@ public class GameController : MonoBehaviour
         questions[currentQuestion].SetQuestion(questionField.text);
         questions[currentQuestion].SetButtonName(buttonNameField.text);
 
+        // Очищаем список ответов, иначе при удалении ответов будут сохранятся удаленные ответы
         questions[currentQuestion].ClearAnswers();
         
         for (int i = 0; i < answerInputFields.Count; i++)
